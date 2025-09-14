@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # testApp
 
 # iOS Application Development Task
@@ -21,3 +22,6 @@ It includes UI implementation for the provided screens and API integration with 
    ```bash
    git clone https://github.com/Arunapk/testApp.git
 
+=======
+# testApp
+>>>>>>> 16c1c96107bf9649404ab0236d17b6d706a1bd69
