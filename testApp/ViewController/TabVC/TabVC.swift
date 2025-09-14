@@ -24,41 +24,27 @@ class TabVC: UITabBarController {
             shadowOffset: CGSize(width: 0, height: -3),
             shadowRadius: 6
         )
+        
     }
     
     private func setupTabBar() {
-        tabBar.tintColor = .systemBlue
-        tabBar.unselectedItemTintColor = .systemGray
+        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = .white
         tabBar.backgroundColor = .PRIMARY_COLOR
         
-        let firstVC = FirstVC()
-        firstVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
+        let homeVC = HomeViewController()
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 0)
         
-        let secondVC = SecondVC()
-        secondVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 1)
+        let companyVC = CompanyVC()
+        companyVC.tabBarItem = UITabBarItem(title: "Company", image: UIImage(systemName: "person.3.fill"), tag: 1)
         
-        let thirdVC = ThirdVC()
-        thirdVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
+        let settingPageVC = SettingViewController()
+        settingPageVC.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 2)
         
-        viewControllers = [firstVC, secondVC, thirdVC]
+        viewControllers = [homeVC, companyVC, settingPageVC]
         
-        // Hide unselected titles
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.clear], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
     }
-    
-//    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-//        updateTabBarTitles(selectedIndex: selectedIndex)
-//    }
-//    
-//    
-//    private func updateTabBarTitles(selectedIndex: Int) {
-//        guard let items = tabBar.items else { return }
-//        
-//        for (index, item) in items.enumerated() {
-//            item.title = (index == selectedIndex) ? (item.title ?? "") : nil
-//            debugPrint("\(item.title)")
-//        }
-//    }
     
 }

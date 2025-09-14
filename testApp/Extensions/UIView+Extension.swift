@@ -39,4 +39,39 @@ extension UIView {
         layer.shadowOffset = shadowOffset
         layer.shadowRadius = shadowRadius
     }
+    
+    func cornerRadius(_ radius: CGFloat) {
+        self.layer.cornerRadius = radius
+        self.clipsToBounds = true
+    }
+    
+    func applyCornerRadiusWithShadow(
+            cornerRadius: CGFloat = 12,
+            shadowColor: UIColor = .gray,
+            shadowOpacity: Float = 0.3,
+            shadowOffset: CGSize = CGSize(width: 0, height: 2),
+            shadowRadius: CGFloat = 6
+    ) {
+        // Corner radius
+        self.layer.cornerRadius = cornerRadius
+        self.layer.masksToBounds = false
+        
+        // Shadow
+        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowOpacity = shadowOpacity
+        self.layer.shadowOffset = shadowOffset
+        self.layer.shadowRadius = shadowRadius
+    }
 }
+
+extension UIImageView {
+    func applyShadow(cornerRadius: CGFloat = 12) {
+        self.layer.cornerRadius = cornerRadius
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.25
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius = 4
+        self.layer.masksToBounds = false
+    }
+}
+
